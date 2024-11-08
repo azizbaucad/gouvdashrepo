@@ -23,11 +23,11 @@ const inner = [
 ];
 
 export const SenegalMap = () => {
-  const [isClient, setIsClient] = useState(false);
+  /* const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(typeof window !== 'undefined'); // Active le rendu client seulement
-  }, []);
+    setIsClient(typeof window !== 'undefined'); 
+  }, []); */
 
   const regionsCoordinates = {
     Dakar: [14.6928, -17.4467],
@@ -155,6 +155,10 @@ export const SenegalMap = () => {
         <Rectangle bounds={outer} pathOptions={{ color: 'cyan' }} />
       </Pane>
     ) : null;
+  }
+
+  if (typeof window !== "undefined") {
+    const height = window.innerHeight;
   }
 
   return (
